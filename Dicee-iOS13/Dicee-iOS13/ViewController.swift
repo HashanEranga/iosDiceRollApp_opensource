@@ -12,18 +12,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
-    
-    var leftDiceNumber = 1
-    var rightDiceNumber = 1
-    
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageView1.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
+        let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")]
         
-        diceImageView2.image = [#imageLiteral(resourceName: "DiceSix"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceOne")][leftDiceNumber]
+        //choose a random element from the dice array
+        diceImageView1.image = diceArray.randomElement()
+        diceImageView2.image = diceArray.randomElement()
         
-        leftDiceNumber = leftDiceNumber + 1
-        rightDiceNumber = rightDiceNumber + 1
     }
     
 }
