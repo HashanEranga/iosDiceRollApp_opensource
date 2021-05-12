@@ -17,15 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //image manipulation of the two image views
-        diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
-        
-        //image opacity manipulation of the two image views
-        diceImageView1.alpha = 0.5
-        diceImageView2.alpha = 0.5
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageView1.image = #imageLiteral(resourceName: "DiceFour")
+        diceImageView2.image = #imageLiteral(resourceName: "DiceFour")
+    }
+    
 }
 
